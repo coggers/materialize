@@ -280,12 +280,6 @@
 
         if (element !== null) {
             Effect.show(e, element);
-
-            if ('ontouchstart' in window) {
-                element.addEventListener('touchend', Effect.hide, false);
-                element.addEventListener('touchcancel', Effect.hide, false);
-            }
-
             element.addEventListener('mouseup', Effect.hide, false);
             element.addEventListener('mouseleave', Effect.hide, false);
         }
@@ -300,10 +294,6 @@
 
         //Wrap input inside <i> tag
         Effect.wrapInput($$('.waves-effect'));
-
-        if ('ontouchstart' in window) {
-            document.body.addEventListener('touchstart', showEffect, false);
-        }
 
         document.body.addEventListener('mousedown', showEffect, false);
     };
@@ -321,11 +311,6 @@
             Effect.wrapInput([element]);
             element = element.parentElement;
         }
-
-        if ('ontouchstart' in window) {
-            element.addEventListener('touchstart', showEffect, false);
-        }
-
         element.addEventListener('mousedown', showEffect, false);
     };
 
